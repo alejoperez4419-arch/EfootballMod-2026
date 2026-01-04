@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>eFootball mod 2026</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#020b08">
+  <link rel="apple-touch-icon" href="admin.png">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+</head>
+
+<body>
+  <div id="bg-blur"></div>
+
+  <!-- SECTION 1 -->
+  <section id="section1" class="card" style="display:flex">
+    <img class="titulo_logo" src="logo white2.png" alt="logo">
+    <h2>Enter your Player ID</h2>
+    <div class="input-container">
+      <i class="bi bi-person-fill left-icon"></i>
+      <input id="receiverId" placeholder="Player ID" />
+    </div>
+    <label class="label-small">Select your platform</label>
+    <div class="platforms">
+      <label class="platform"><input name="platform" type="radio" value="PC"><i class="bi bi-windows"></i></label>
+      <label class="platform"><input name="platform" type="radio" value="Xbox"><i class="bi bi-xbox"></i></label>
+      <label class="platform"><input name="platform" type="radio" value="Android"><i class="bi bi-android2"></i></label>
+      <label class="platform"><input name="platform" type="radio" value="iOS"><i class="bi bi-apple"></i></label>
+    </div>
+    <button id="next1" class="btn">Next</button>
+  </section>
+
+  <!-- SECTION 2 -->
+  <section id="section2" class="card">
+    <h2>Searching for player...</h2>
+    <p id="searchUsername" class="muted"></p>
+    <div class="spinner"></div>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section id="section3" class="card">
+    <h2>Select your amounts</h2>
+    <p class="muted">Enter the amount</p>
+    <div class="input-container">
+      <img src="coin.png" class="icon-input" alt="coin" />
+      <input id="coinsInput" type="number" min="0" placeholder="Amount of Coins" />
+    </div>
+    <div class="input-container">
+      <img src="gp.png" class="icon-input" alt="gp" />
+      <input id="gpInput" type="number" min="0" placeholder="Amount of GP" />
+    </div>
+    <button id="next2" class="btn">Send</button>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section id="section4" class="card">
+    <h2>Sending...</h2>
+    <p class="muted">Please wait</p>
+    <div id="loadingBar"><div id="loadingFill"></div></div>
+  </section>
+
+  <!-- SECTION 5 -->
+  <section id="section5" class="card final">
+    <div class="overlay"></div>
+    <div class="content">
+      <h2>Congratulations 🎉</h2>
+      <p class="muted">Items sent to<strong id="finalUsername"></strong></p>
+      <div class="result-images">
+        <div class="result-item">
+          <img src="coin.png" alt="Coins" />
+          <div class="result-text"><span id="finalCoins">0</span> <small>Coins</small></div>
+        </div>
+        <div class="result-item">
+          <img src="gp.png" alt="GP" />
+          <div class="result-text"><span id="finalGP">0</span> <small>GP</small></div>
+        </div>
+      </div>
+      <button id="restart" class="btn secondary">Send Again</button>
+    </div>
+  </section>
+
+  <script src="main.js"></script>
+  
+</body>
+</html>
